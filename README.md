@@ -1,4 +1,4 @@
-# Nvkenin Stealth Suite v1.0
+# Stealth Suite v1.0
 
 Framework automatizado para **Auditoria de Segurança**, **Engenharia Social** e **Pentest Web**. Desenvolvido com foco em portabilidade, permitindo operações rápidas via clonagem direta ou em ambientes Kali Linux Live (Wardrive).
 
