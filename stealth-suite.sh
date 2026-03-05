@@ -95,7 +95,7 @@ function main_menu() {
     setup_environment
     while true; do
         clear
-        echo -e "${C_RED}    Nvkenin Stealth Suite v11.5${C_RESET}"
+        echo -e "${C_RED}    Nvkenin Stealth Suite v1.0${C_RESET}"
         echo -e "${C_CYAN}------------------------------------------------${C_RESET}"
         echo -e " [1] Iniciar Stealth Mode    [2] New Identity (IP)"
         echo -e " [3] Zphisher (Social Eng)   [4] Sherlock (OSINT)"
