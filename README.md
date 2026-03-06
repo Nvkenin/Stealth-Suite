@@ -1,55 +1,76 @@
-# Nvkenin Stealth Suite v1.0
+# Nvkenin Stealth Suite 
 
-Framework automatizado para **Auditoria de Segurança**, **Engenharia Social** e **Pentest Web**. Desenvolvido com foco em portabilidade, permitindo operações rápidas via clonagem direta ou em ambientes Kali Linux Live (Wardrive).
+![License](https://img.shields.io/badge/License-MIT-red.svg)
 
+**Nvkenin Stealth Suite** é um framework avançado de **OSINT**, **Phishing** e **Auditoria Web**, projetado para operadores que exigem anonimato total e eficiência. O suite integra o **Stealth Mode**, garantindo que todo o tráfego seja roteado via rede Tor com um Killswitch ativo para prevenir vazamentos de IP.
 
+---
 
 ## Funcionalidades Principais
 
-- **Cascaded Stealth Mode:** Inicia o serviço Tor e oferece ativação imediata de Kill Switch via IPTables.
-- **Kill Switch Hardened:** Bloqueia todo o tráfego IPv4 e IPv6 que não passe pelo túnel do Tor, prevenindo vazamentos acidentais.
-- **Auto-Dependency:** Instala automaticamente dependências de sistema (PHP, Python, Git) e bibliotecas de ferramentas específicas.
-- **Identity Rotation:** Altera o circuito Tor e o endereço IP público com um único comando.
-- **Forense Amigável:** Operação otimizada para rodar em RAM (diretório `/tmp`) se desejado.
+### Stealth Mode
+- **Tor Killswitch:** Bloqueio total de tráfego fora do túnel Tor via IPTables.
+- **Network Diagnostic:** Verificação em tempo real de IP Real vs. IP Tor.
+- **Proxychains Integration:** Roteamento automático para ferramentas externas.
 
-## Guia de Uso
+### Arsenal de Ferramentas (Integrado)
+- **Phishing:** Zphisher, CamPhish, Seeker.
+- **Web & Audit:** RED_HAWK, SQLMap, Breacher, **Nuclei** (Vulnerability Scanner).
+- **OSINT Arsenal:** Sherlock, PhoneInfoga, theHarvester, **Gau** (URL Collector), **Holehe** (Email OSINT).
 
-### Opção A: Clone Direto (Uso em Máquina Fixa/VM)
-Ideal para laboratórios de estudo e análise persistente.
+### OSINT (Nativo)
+- **IP Info:** Geolocalização e detalhes de ISP.
+- **DNS Lookup:** Registros A, MX, NS, TXT.
+- **Subdomain Enum:** Descoberta via certificados CRT.sh.
+- **Password Analyzer:** Checagem de força e integração com **Rockyou.txt**.
+
+---
+
+## Instalação e Uso
+
+O script automatiza todas as dependências (apt, pip e git clones).
+
 ```bash
-# Clonar o repositório
-git clone https://github.com/nvkenin/stealth-suite.git
+# Clone o repositório
+git clone https://github.com/seu-usuario/nvkenin-stealth-suite.git
+cd Hacking-Tools
 
-# Entrar no diretório e dar permissão de execução
-cd stealth-suite
+# Dê permissão de execução
 chmod +x stealth-suite.sh
 
-# Executar como root
+# Execute como root (necessário para IPTables/Tor)
 sudo ./stealth-suite.sh
 ```
-### Opção B: Modo Wardrive (Kali Live USB)
 
-Ideal para auditorias em campo onde não se pode deixar rastros no hardware.
+---
 
-1. Conecte-se à rede alvo (Wi-Fi/Ethernet).
+## Interface (Design)
 
-2. Abra o terminal e baixe o script diretamente para a RAM:
+O Suite mantém o design clássico **Crimson Protocol**:
+- **C_BLOOD:** Vermelho intenso para alertas e títulos.
+- **C_GHOST:** Cinza suave para informações.
+- **Barra de Carregamento:** Visual aprimorado para sincronização do arsenal.
 
-```bash
-cd /tmp
-git clone https://github.com/nvkenin/stealth-suite.git
-cd stealth-suite && sudo bash stealth-suite.sh
-```
+---
 
-3. Ao finalizar, use a opção [0] Sair para limpar as regras de firewall e parar os serviços.
+## English Version
 
-## Ferramentas Integradas
-    
-- **Zphisher**: Phishing avançado para testes de Engenharia Social.
-- **Sherlock**: Busca OSINT de nomes de usuário em redes sociais.
-- **SQLMap**: Detecção e exploração automatizada de falhas de Injeção SQL.
-- **Seeker**: Localização geográfica precisa através de links de engenharia social.
+**Nvkenin Stealth Suite** is an advanced framework for **OSINT**, **Phishing**, and **Web Auditing**, designed for operators requiring total anonymity.
 
-# ⚠️Aviso Legal
+### Features:
+- **Tor Killswitch:** Full traffic blocking outside Tor via IPTables.
+- **Network Diagnostics:** Real-time check of Real IP vs. Tor IP.
+- **Integrated Arsenal:** Nuclei, Gau, Holehe, SQLMap, Zphisher, and more.
+- **Native OSINT:** IP geolocation, DNS lookup, and Rockyou password analysis.
 
-**Este software foi desenvolvido apenas para fins educacionais e de auditoria de segurança autorizada. O uso desta ferramenta para atacar alvos sem consentimento prévio é ilegal. O desenvolvedor não se responsabiliza pelo uso indevido deste código.**
+### Quick Start:
+1. `chmod +x stealth-suite.sh`
+2. `sudo ./stealth-suite.sh`
+
+--- 
+
+## Aviso Legal (Disclaimer)
+
+Este software foi criado exclusivamente para fins educacionais e testes de penetração autorizados. O uso desta ferramenta para atacar alvos sem consentimento prévio é ilegal. O desenvolvedor não se responsabiliza pelo uso indevido deste software.
+
+---
